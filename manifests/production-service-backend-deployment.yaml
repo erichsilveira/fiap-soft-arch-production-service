@@ -2,24 +2,24 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: payments-service-backend-deployment
-  name: payments-service-backend-deployment
+    app: production-service-backend-deployment
+  name: production-service-backend-deployment
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: payments-service-backend
+      app: production-service-backend
   template:
     metadata:
       labels:
-        app: payments-service-backend
+        app: production-service-backend
     spec:
       containers:
         - env:
             - name: postgre.address
               value: postgres
-          image: erich852/payments-service
-          name: payments-service-project
+          image: erich852/production-service
+          name: production-service-project
           imagePullPolicy: Always
           ports:
             - containerPort: 8003
