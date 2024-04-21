@@ -1,6 +1,6 @@
 package com.fiap.payments.infrastructure.web;
 
-import com.fiap.orders.exception.ResourceNotFoundException;
+import com.fiap.production.exception.ResourceNotFoundException;
 import com.fiap.payments.mocks.PaymentMock;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

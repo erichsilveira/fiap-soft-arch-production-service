@@ -7,7 +7,7 @@ import static org.mockito.Mockito.reset;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import com.fiap.orders.exception.ResourceNotFoundException;
+import com.fiap.production.exception.ResourceNotFoundException;
 import com.fiap.payments.mocks.PaymentMock;
 import java.util.Optional;
 import org.junit.jupiter.api.AfterEach;

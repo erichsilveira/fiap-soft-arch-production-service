@@ -5,6 +5,6 @@ RUN mvn clean package -Dmaven.test.skip=true
 
 FROM amazoncorretto:17.0.8-alpine
 #WORKDIR /app
-EXPOSE 8003
-COPY --from=builder target/payments*.jar payments.jar
-ENTRYPOINT ["java", "-jar", "payments.jar"]
+EXPOSE 8002
+COPY --from=builder target/production*.jar production.jar
+ENTRYPOINT ["java", "-jar", "production.jar"]

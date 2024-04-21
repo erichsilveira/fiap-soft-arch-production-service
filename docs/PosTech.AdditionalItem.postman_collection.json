@@ -1,0 +1,71 @@
+{
+  "info": {
+    "_postman_id": "d89de01-f23g-45h6-i789-j01k23lmn4op",
+    "name": "Additional Items API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Additional Item",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Extra Sauce\",\n    \"description\": \"Additional garlic sauce\",\n    \"productCategoryId\": \"cat123\",\n    \"price\": 1.99\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{host}}/additional_items",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "additional_items"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search Additional Items",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{host}}/additional_items?productCategoryId={{productCategoryId}}",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "additional_items"
+          ],
+          "query": [
+            {
+              "key": "productCategoryId",
+              "value": "cat123",
+              "description": "Filter additional items by product category ID"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "host",
+      "value": "http://localhost:8002",
+      "type": "string"
+    }
+  ]
+}

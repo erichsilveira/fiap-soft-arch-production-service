@@ -1,0 +1,64 @@
+{
+  "info": {
+    "_postman_id": "c789de01-f23g-45h6-i789-j01k23lmn4op",
+    "name": "Product Categories API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Product Category",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Burger\",\n    \"description\": \"A category for burger food\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{host}}/product_categories",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "product_categories"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search Product Categories",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{host}}/product_categories",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "product_categories"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "host",
+      "value": "http://localhost:8002",
+      "type": "string"
+    }
+  ]
+}

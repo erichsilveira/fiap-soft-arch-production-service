@@ -1,0 +1,161 @@
+{
+  "info": {
+    "_postman_id": "b789de01-f23g-45h6-i789-j01k23lmn4op",
+    "name": "Products API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Product",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Example Product\",\n    \"description\": \"This is an example description\",\n    \"productCategoryId\": \"cat123\",\n    \"price\": 99.99\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{host}}/products",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search Products by Category ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{host}}/products?productCategoryId={{productCategoryId}}",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "products"
+          ],
+          "query": [
+            {
+              "key": "productCategoryId",
+              "value": "cat123",
+              "description": "Filter products by product category ID"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search Product by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{host}}/products/{{productId}}",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "products",
+            "{{productId}}"
+          ],
+          "variable": [
+            {
+              "id": "productId",
+              "key": "productId",
+              "value": "prod123",
+              "description": "Unique identifier of the product to retrieve"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Product",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Updated Product\",\n    \"description\": \"Updated description\",\n    \"productCategoryId\": \"cat123\",\n    \"price\": 109.99\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{host}}/products/{{productId}}",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "products",
+            "{{productId}}"
+          ],
+          "variable": [
+            {
+              "id": "productId",
+              "key": "productId",
+              "value": "prod123"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Product",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{host}}/products/{{productId}}",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "products",
+            "{{productId}}"
+          ],
+          "variable": [
+            {
+              "id": "productId",
+              "key": "productId",
+              "value": "prod123"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "host",
+      "value": "http://localhost:8002",
+      "type": "string"
+    }
+  ]
+}

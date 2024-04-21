@@ -1,5 +1,5 @@
 # Tech Challenge Phase 4
-Pos Tech FIAP - Payments Project
+Pos Tech FIAP - Production Project
 
 ## Team Members
 - Gabriel Martins de Miranda - rm352234
@@ -13,7 +13,7 @@ Pos Tech FIAP - Payments Project
 - https://miro.com/app/board/uXjVNf1J6J8=
 
 ### Postman Collection
-- [Postech.Payments.postman_collection.json](docs/PosTech.Payments.postman_collection.json) inside `docs` directory
+- [Postech.Production.postman_collection.json](docs/PosTech.Product.postman_collection.json) inside `docs` directory
 
 ### Swagger (openAPI)
 - Access [Swagger](http://localhost:8080/swagger-ui/index.html) UI
