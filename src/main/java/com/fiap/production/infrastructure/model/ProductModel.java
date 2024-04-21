@@ -23,27 +23,32 @@ public class ProductModel {
 
     public static ProductModel toProductModel(Product product) {
         return ProductModel.builder()
-            .id(product.getId())
-            .name(product.getName())
-            .description(product.getDescription())
-            .price(product.getPrice())
-            .productCategory(ProductCategoryModel.builder().id(product.getProductCategoryId()).build())
-            .createdAt(product.getCreatedAt())
-            .updatedAt(product.getUpdatedAt())
-            .build();
+                .id(product.getId())
+                .name(product.getName())
+                .description(product.getDescription())
+                .price(product.getPrice())
+                .productCategory(ProductCategoryModel.builder().id(product.getProductCategoryId()).build())
+                .createdAt(product.getCreatedAt())
+                .updatedAt(product.getUpdatedAt())
+                .build();
     }
 
     public static Product toProduct(ProductModel productModel) {
+        if (productModel == null) {
+            return null;
+        }
+
         return Product.builder()
-            .id(productModel.getId())
-            .name(productModel.getName())
-            .description(productModel.getDescription())
-            .price(productModel.getPrice())
-            .productCategoryId(productModel.getProductCategory().getId())
-            .createdAt(productModel.getCreatedAt())
-            .updatedAt(productModel.getUpdatedAt())
-            .build();
+                .id(productModel.getId())
+                .name(productModel.getName())
+                .description(productModel.getDescription())
+                .price(productModel.getPrice())
+                .productCategoryId(productModel.getProductCategory() != null ? productModel.getProductCategory().getId() : null)
+                .createdAt(productModel.getCreatedAt())
+                .updatedAt(productModel.getUpdatedAt())
+                .build();
     }
+
 
     @Id
     @GeneratedValue

@@ -23,27 +23,32 @@ public class AdditionalItemModel {
 
     public static AdditionalItemModel toAdditionalItemModel(AdditionalItem additionalItem) {
         return AdditionalItemModel.builder()
-            .id(additionalItem.getId())
-            .name(additionalItem.getName())
-            .description(additionalItem.getDescription())
-            .price(additionalItem.getPrice())
-            .productCategory(ProductCategoryModel.builder().id(additionalItem.getProductCategoryId()).build())
-            .createdAt(additionalItem.getCreatedAt())
-            .updatedAt(additionalItem.getUpdatedAt())
-            .build();
+                .id(additionalItem.getId())
+                .name(additionalItem.getName())
+                .description(additionalItem.getDescription())
+                .price(additionalItem.getPrice())
+                .productCategory(ProductCategoryModel.builder().id(additionalItem.getProductCategoryId()).build())
+                .createdAt(additionalItem.getCreatedAt())
+                .updatedAt(additionalItem.getUpdatedAt())
+                .build();
     }
 
     public static AdditionalItem toAdditionalItem(AdditionalItemModel additionalItemModel) {
+        if (additionalItemModel == null) {
+            return null;
+        }
+
         return AdditionalItem.builder()
-            .id(additionalItemModel.getId())
-            .name(additionalItemModel.getName())
-            .description(additionalItemModel.getDescription())
-            .price(additionalItemModel.getPrice())
-            .productCategoryId(additionalItemModel.getProductCategory().getId())
-            .createdAt(additionalItemModel.getCreatedAt())
-            .updatedAt(additionalItemModel.getUpdatedAt())
-            .build();
+                .id(additionalItemModel.getId())
+                .name(additionalItemModel.getName())
+                .description(additionalItemModel.getDescription())
+                .price(additionalItemModel.getPrice())
+                .productCategoryId(additionalItemModel.getProductCategory() != null ? additionalItemModel.getProductCategory().getId() : null)
+                .createdAt(additionalItemModel.getCreatedAt())
+                .updatedAt(additionalItemModel.getUpdatedAt())
+                .build();
     }
+
 
     @Id
     @GeneratedValue

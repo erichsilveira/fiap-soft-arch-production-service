@@ -1,10 +1,13 @@
 package com.fiap.production.domain.entity;
 
-import java.math.BigDecimal;
-import java.time.ZonedDateTime;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
+import java.math.BigDecimal;
+import java.time.ZonedDateTime;
+
+@AllArgsConstructor
 @Builder
 public class Product {
 
