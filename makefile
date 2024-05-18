@@ -7,6 +7,5 @@ k get pods
 k delete pod,svc --all
 k delete --all deployments --namespace=default
 
-
 aws eks --region us-east-1 update-kubeconfig --name apps_cluster
 k port-forward production-service-backend-svc 30003:30003

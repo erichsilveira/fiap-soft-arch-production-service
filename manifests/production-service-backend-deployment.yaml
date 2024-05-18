@@ -18,7 +18,7 @@ spec:
         - env:
             - name: postgre.address
               value: postgres
-          image: erich852/production-service
+          image: erich852/production
           name: production-service-project
           imagePullPolicy: Always
           ports:
