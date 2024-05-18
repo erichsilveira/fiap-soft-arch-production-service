@@ -9,7 +9,7 @@ spec:
   ports:
     - port: 8003
       targetPort: 8003
-      nodePort: 30003
+      nodePort: 30004
   selector:
     app: production-service-backend
 
